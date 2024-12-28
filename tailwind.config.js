@@ -113,6 +113,10 @@ export default {
             opacity: 1,
           },
         },
+        'spin-record': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
         'ripple': {
           '0%': {
             transform: 'scale(1)',
@@ -171,6 +175,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'crash': 'crash-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) both',
+        'spin-record': 'spin-record 1.8s linear infinite',
         'ripple': 'ripple 1s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'flash': 'flash 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'shake': 'shake 0.8s cubic-bezier(.36,.07,.19,.97) both',

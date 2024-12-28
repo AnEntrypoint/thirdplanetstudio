@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 export function CrashLogo() {
   const [planetCrashing, setPlanetCrashing] = useState(false);
   const [showRipples, setShowRipples] = useState(false);
+  const [hasLanded, setHasLanded] = useState(false);
 
   useEffect(() => {
     const planetTimeout = setTimeout(() => {
@@ -14,9 +15,14 @@ export function CrashLogo() {
       setShowRipples(true);
     }, 1300);
 
+    const landedTimeout = setTimeout(() => {
+      setHasLanded(true);
+    }, 1400); // Set after crash animation completes
+
     return () => {
       clearTimeout(planetTimeout);
       clearTimeout(rippleTimeout);
+      clearTimeout(landedTimeout);
     };
   }, []);
 
@@ -30,7 +36,10 @@ export function CrashLogo() {
           `}
         >
           <div className="relative">
-            <div className="relative z-10 w-[320px] h-[320px]">
+            <div className={`
+              relative z-10 w-[320px] h-[320px]
+              ${hasLanded ? 'animate-spin-record' : ''}
+            `}>
               <img src={logo} alt="Logo" className="w-full h-full" />
             </div>
             
