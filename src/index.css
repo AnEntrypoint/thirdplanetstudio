@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes crash-in {
+  0% {
+    transform: translate(-200%, -100%) rotate(0deg);
+  }
+  70% {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+  85% {
+    transform: translate(-50%, 50%) rotate(375deg);
+  }
+  92% {
+    transform: translate(-50%, 50%) rotate(368deg);
+  }
+  100% {
+    transform: translate(-50%, 50%) rotate(370deg);
+  }
+}
+
+/* ... rest of the animations remain the same ... */
